@@ -1,0 +1,46 @@
+#App.teal {
+
+	h1 { color: $blue; }
+
+	header {
+		background-color: $teal;
+
+		#logo { .icon-logo { fill: $blue; } }
+
+		#header-right {
+			
+			>li {
+
+				.icon-color {
+
+					&:hover, &:focus { fill: $blue; }
+
+				}
+
+				>.icon-user {
+					background-color: $blue;
+
+					&:hover, &:focus { background-color: rgba(73, 0, 255, 0.6); }
+
+				}
+
+			}
+
+		}
+
+		nav {
+			
+			li {
+
+				&.active {
+					color: $blue;
+					border-bottom-color: $blue;
+				}
+
+			}
+
+		}
+
+	}
+
+}

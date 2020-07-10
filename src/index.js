@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import "./styles/styles.scss";
 
 const App = () => (
-  <div id="App">
+  <div id="App" class="blue light-mode">
     <header>
       <div id="logo">
         <svg
@@ -22,10 +22,11 @@ const App = () => (
             className="icon icon-color"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
+            onClick=""
           >
             <path d="M25 5a20 20 0 0 0 0 40 3.3 3.3 0 0 0 3.3-3.3 3.4 3.4 0 0 0-0.9-2.2A3.3 3.3 0 0 1 30 33.9h3.9A11.1 11.1 0 0 0 45 22.8C45 13 36 5 25 5ZM12.8 25a3.3 3.3 0 1 1 3.3-3.3A3.3 3.3 0 0 1 12.8 25Zm6.7-8.9a3.3 3.3 0 1 1 3.3-3.3A3.3 3.3 0 0 1 19.4 16.1Zm11.1 0a3.3 3.3 0 1 1 3.3-3.3A3.3 3.3 0 0 1 30.6 16.1ZM37.2 25a3.3 3.3 0 1 1 3.3-3.3A3.3 3.3 0 0 1 37.2 25Z" />
           </svg>
-          <ul id="palette-menu" class="">
+          <ul id="palette-menu" class="hidden">
             <li className="colors">
               <ul>
                 <li className="bg-teal active" />
@@ -61,6 +62,33 @@ const App = () => (
           >
             <path d="M8.1 35.9c0.1-2.6 2-4.6 5.9-6.3a28.1 28.1 0 0 1 11-2.4 27.6 27.6 0 0 1 11 2.5c3.9 1.7 5.8 3.8 5.9 6.2Q35.7 45 25 45T8.1 35.9ZM25 21.9a8.2 8.2 0 0 0 6-2.5 8.1 8.1 0 0 0 2.5-6 8.2 8.2 0 0 0-2.5-6A8.4 8.4 0 0 0 25 5a8.2 8.2 0 0 0-6 2.5 8.1 8.1 0 0 0-2.5 6A8.5 8.5 0 0 0 25 21.9Z" />
           </svg>
+          <ul id="user-menu" class="hidden">
+            <li className="username">email@website.com</li>
+            <li className="options">
+              <ul>
+                <li>
+                  <svg
+                    className="icon icon-user"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 50"
+                  >
+                    <path d="M8.1 35.9c0.1-2.6 2-4.6 5.9-6.3a28.1 28.1 0 0 1 11-2.4 27.6 27.6 0 0 1 11 2.5c3.9 1.7 5.8 3.8 5.9 6.2Q35.7 45 25 45T8.1 35.9ZM25 21.9a8.2 8.2 0 0 0 6-2.5 8.1 8.1 0 0 0 2.5-6 8.2 8.2 0 0 0-2.5-6A8.4 8.4 0 0 0 25 5a8.2 8.2 0 0 0-6 2.5 8.1 8.1 0 0 0-2.5 6A8.5 8.5 0 0 0 25 21.9Z" />
+                  </svg>
+                  <span>Profile</span>
+                </li>
+                <li>
+                  <svg
+                    className="icon icon-logout"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 50"
+                  >
+                    <path d="M35 15 45 25 35 35l-2.8-2.8L37.4 27H17V23H37.4l-5.2-5.2ZM9 43H25V39H9V11H25V7H9a4 4 0 0 0-4 4V39A4 4 0 0 0 9 43Z" />
+                  </svg>
+                  <span>Log out</span>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </li>
       </ul>
 

@@ -1,9 +1,12 @@
 @import 'base/base-index';
+@import 'color-palette/color-palette-index.scss';
 
-html,
-body {
+#App {
+  height: 100%;
+  width: 100%;
+
   background-color: #F7F7F7;
-  background-image: url('../../img/bg-pattern.svg');
+	background-image: url('../../img/bg-pattern.svg');
   background-size: 100px;
   background-repeat: repeat;
 
@@ -14,21 +17,19 @@ body {
   .hidden { display: none; }
 
   .icon {
-    fill: $gray2;
+    fill: $gray1;
     height: $s15px;
   }
   
   header {
-    background-color: $teal;
-    background-image: url('../../img/grid.svg');
     text-align: center;
     position: relative;
+    box-shadow: 0 $s3px $s4px rgba(0,0,0,0.16);
 
     #logo {
       padding: $s15px $s20px;
 
       .icon-logo {
-        fill: $blue;
         margin-right: $s20px;
         vertical-align: middle;
         height: $s25px;
@@ -47,81 +48,92 @@ body {
       right: $s20px;
       text-align: right;
 
-      .icon-color {
-        fill: $white;
-        height: $s25px;
-        width: $s25px;
-        padding: $s3px;
-        border-radius: 50%;
-      
-        &:hover, &:focus {
-          transition: $base-transition;
-          background-color: rgba(255,255,255,0.5);
-          fill: $blue;
-        }
-      
-      }
-      
-      >li { display: inline; }
+      >li {
+        display: inline;
+        vertical-align: middle;
 
-      #palette-menu {
-        top: $s5px;
-        position: relative;
-        background-color: $white;
-        padding: $s15px;
-        text-align: left;
-        border-radius: $s3px;
-        box-shadow: 0 0 $s3px rgba(0,0,0,0.25);
-
-        .colors {
-          border-bottom: $s2px solid $gray3;
-          padding-bottom: $s15px;
-          margin-bottom: $s15px;
-        }
-        
-        .colors li {
+        .icon-color {
+          fill: $white;
           height: $s25px;
           width: $s25px;
-          display: inline-block;
+          padding: $s3px;
           border-radius: 50%;
-          border: $s2px solid $transparent-white;
-          cursor: pointer;
-
+          margin-right: $s15px;
+        
           &:hover, &:focus {
             transition: $base-transition;
-            border: $s2px solid rgba(0,0,0,0.1);
+            background-color: rgba(255,255,255,0.8);
           }
-
-          &.active {
-            background-image: url('../../img/icon/check-white.svg');
-            background-position: center;
-            background-size: $s20px;
-            background-repeat: no-repeat;
-          }
-          
+        
         }
 
-        .colors li:not(:last-child) { margin-right: $s5px; }
-        
-        .options {
+        #palette-menu {
+          @include base-dropdown;
+  
+          .colors {
+            border-bottom: $s2px solid $gray3;
+            padding-bottom: $s15px;
+            margin-bottom: $s15px;
+          
+            ul {
+              display: grid;
+              grid-template-columns: repeat(7, 1fr);
 
-          ul li {
-            padding: $s5px;
-            background-color: $transparent-white;
-            border-radius: $s3px;
-            cursor: pointer;
+              li {
+                height: $s25px;
+                width: $s25px;
+                display: inline-block;
+                border-radius: 50%;
+                border: $s2px solid $transparent-white;
+                cursor: pointer;
+      
+                &:hover, &:focus {
+                  transition: $base-transition;
+                  border: $s2px solid rgba(0,0,0,0.1);
+                }
+      
+                &.active {
+                  background-image: url('../../img/icon/check-white.svg');
+                  background-position: center;
+                  background-size: $s20px;
+                  background-repeat: no-repeat;
+                }
 
-            &:hover, &:focus {
-              transition: $base-transition;
-              background-color: $gray4;
+                &:not(:last-child) { margin-right: $s5px; }
+
+              }
+
             }
 
-            >* { vertical-align: middle; }
-
-           .icon { margin-right: $s7px; }
-
           }
-        
+  
+          .options { @include options; }
+
+        }
+
+        >.icon-user {
+          fill: $white;
+          height: $s20px;
+          width: $s20px;
+          padding: $s2px;
+          border-radius: 50%;
+
+          &:hover, &:focus { transition: $base-transition; }
+
+        }
+
+        #user-menu {
+          @include base-dropdown;
+
+          .username {
+            font-family: 'Segoe UI Semibold';
+            border-bottom: $s2px solid $gray3;
+            padding-bottom: $s15px;
+            margin-bottom: $s15px;
+          }
+
+          .options { @include options; }
+
         }
 
       }
@@ -130,7 +142,11 @@ body {
 
     nav {
       text-align: left;
-      font-family: 'Segoe UI Semibold';
+      font-family: 'anonymous-pro', monospace;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: $s17px;
       color: $white;
 
       li {
@@ -140,10 +156,7 @@ body {
 
         &:hover, &:focus { border-bottom: $s4px solid $white; }
 
-        &.active {
-          color: $blue;
-          border-bottom: $s4px solid $blue;
-        }
+        &.active { border-bottom: $s4px solid; }
 
       }
 

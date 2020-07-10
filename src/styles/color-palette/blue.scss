@@ -1,0 +1,46 @@
+#App.blue {
+
+	h1 { color: $pink; }
+
+	header {
+		background-color: $blue;
+
+		#logo { .icon-logo { fill: $pink; } }
+
+		#header-right {
+			
+			>li {
+
+				.icon-color {
+
+					&:hover, &:focus { fill: $pink; }
+
+				}
+
+				>.icon-user {
+					background-color: $pink;
+
+					&:hover, &:focus { background-color: rgba(255,8,194,0.8); }
+
+				}
+
+			}
+
+		}
+
+		nav {
+			
+			li {
+
+				&.active {
+					color: $pink;
+					border-bottom-color: $pink;
+				}
+
+			}
+
+		}
+
+	}
+
+}

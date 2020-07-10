@@ -1,1 +1,27 @@
 $base-transition: all ease-in-out 0.1s;
+
+@mixin base-dropdown {
+  position: absolute;
+  top: $s35px;
+  right: 0;
+  padding: $s15px;
+  background-color: $white;
+  border-radius: $s3px;
+  box-shadow: 0 0 $s3px rgba(0,0,0,0.25);
+  text-align: left;
+}
+
+@mixin options {
+  ul li {
+    padding: $s5px;
+    background-color: $transparent-white;
+    border-radius: $s3px;
+    cursor: pointer;
+    &:hover, &:focus {
+      transition: $base-transition;
+      background-color: $gray4;
+    }
+    >* { vertical-align: middle; }
+    .icon { margin-right: $s7px; }
+  }
+}
