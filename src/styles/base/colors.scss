@@ -1,0 +1,24 @@
+$white: #FFFFFF;
+$transparent-white: rgba(255,255,255,0);
+$gray1: #666666;
+$gray2: #B2B2B2;
+$gray3: #E0E0E0;
+$gray4: #F7F7F7;
+
+$teal: #2DE6E2;
+$lt-blue: #00B8FF;
+$blue: #4900FF;
+$dk-blue: #220D91;
+$purple: #9600FF;
+$pink: #FF08C2;
+$red: #F82B60;
+$yellow: #FCB630;
+
+.bg-teal    { background-color: $teal; }
+.bg-lt-blue { background-color: $lt-blue; }
+.bg-blue    { background-color: $blue; }
+.bg-dk-blue { background-color: $dk-blue; }
+.bg-purple  { background-color: $purple; }
+.bg-pink    { background-color: $pink; }
+.bg-red     { background-color: $red; }
+.bg-yellow  { background-color: $yellow; }
